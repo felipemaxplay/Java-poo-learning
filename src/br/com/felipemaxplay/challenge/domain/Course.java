@@ -1,30 +1,21 @@
 package br.com.felipemaxplay.challenge.domain;
 
-public class Course {
-    private String title;
-    private String description;
+public class Course extends Content {
     private int workload;
 
+    @Deprecated
+    public Course() {
+    }
+
     public Course(String title, String description, int workload) {
-        this.title = title;
-        this.description = description;
+        super(title, description);
         this.workload = workload;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    @Override
+    public double calculateXp() {
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+        return XP_DEFAULT * workload;
     }
 
     public int getWorkload() {
@@ -38,9 +29,9 @@ public class Course {
     @Override
     public String toString() {
         return "Course{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", workload=" + workload +
+                "title='" + this.getTitle() + "'" +
+                ", description='" + this.getDescription() + "'" +
+                ", workload=" + this.workload +
                 '}';
     }
 }
