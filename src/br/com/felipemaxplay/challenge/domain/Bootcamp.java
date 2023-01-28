@@ -18,6 +18,12 @@ public class Bootcamp {
     public Bootcamp() {
     }
 
+    public Bootcamp(String name, String description, Set<Content> contents) {
+        this.name = name;
+        this.description = description;
+        this.contents = contents;
+    }
+
     public String getName() {
         return name;
     }

@@ -14,6 +14,10 @@ public class Dev {
     public Dev() {
     }
 
+    public Dev(String name) {
+        this.name = name;
+    }
+
     public void SubscribeBootCamp(Bootcamp bootcamp) {
         this.getContentsSubscribes().addAll(bootcamp.getContents());
         bootcamp.getDevs().add(this);
